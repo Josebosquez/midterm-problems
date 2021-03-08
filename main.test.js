@@ -43,6 +43,19 @@ describe('halfSquare', () => {
   })
 });
 
+describe('isLong', () => {
+  it(`returns true if the given string is longer than 15 characters`, () => {
+    expect(isLong('the quick brown fox')).toBe(true);
+  })
+
+  it(`returns false if the given string is shorter than 15 characters`, () => {
+    expect(isLong('the quick')).toBe(false);
+  })
+
+  it(`returns true if the given string is exactly 15 characters`, () => {
+    expect(isLong('the quick brown')).toBe(true);
+  })
+});
 describe('exclaim', () => {
   it(`given a string without exclamation marks at the end, returns the string with one appended.`, () => {
     expect(exclaim('hello')).toBe('hello!')
@@ -60,19 +73,6 @@ describe('exclaim', () => {
   })
 });
 
-describe('isLong', () => {
-  it(`returns true if the given string is longer than 15 characters`, () => {
-    expect(isLong('the quick brown fox')).toBe(true);
-  })
-
-  it(`returns false if the given string is shorter than 15 characters`, () => {
-    expect(isLong('the quick')).toBe(false);
-  })
-
-  it(`returns true if the given string is exactly 15 characters`, () => {
-    expect(isLong('the quick brown')).toBe(true);
-  })
-});
 
 describe('containsDigit', () => {
   it(`can determine that a string with only digits contains at least one digit`, () => {

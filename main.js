@@ -1,19 +1,44 @@
-function isEvenlyDivisible() {
+function isEvenlyDivisible(num, num1) {
+  if (num % num1 === 0) {
+    return true;
+  } else return false;
 }
 
-function halfSquare() {
+function halfSquare(num) {
+  let str = 0;
+  str = (num ** 2) / 1 / 2;
+  return str;
 }
 
-function isLong() {
+function isLong(str) {
+  if (str.length > 15) {
+    return true;
+  }
+  if (str.length < 15) {
+    return false;
+  } if (str.length = 15) {
+    return true;
+  }
 }
 
-function exclaim() {
-}
+function exclaim(str) {
+//   let count = 0;
+//   if (str[str.length - 1] !== "!") {
+//     return str + "!"
+//   }  
+//   if (str[str.length-1] === "!"){
+//     return str;
+//   } (str[str.length-1] === "!"){
+// // if there are multiple "!", i want to capture the amount.
+// while 
+// // remove all ! and return +1.
+// //indexOf
+//     }
+  }
 
-function countWords() {
-}
+function containsDigit(str){
 
-function containsDigit() {
+  
 }
 
 function containsLowerCase() {
@@ -28,10 +53,21 @@ function containsNonAlphanumeric() {
 function containsSpace() {
 }
 
+function countWords() {
+}
+
 function digits() {
 }
 
-function truncate() {
+function truncate(str) {
+  let str1 = "";
+  if (str.length > 15){
+    for (i = 0; i < 8; i++)
+    return str1 + "..."
+  }
+    else {
+    return str;
+  }
 }
 
 function isValidPassword() {
