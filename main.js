@@ -142,7 +142,7 @@ function containsUpperCase(str) {
   }
 }
 
-function containsNonAlphanumeric() {
+function containsNonAlphanumeric(str) {
   let str1 = 0;
   for (i = 0; i < str.length; i++) {
     if (
@@ -159,8 +159,10 @@ function containsNonAlphanumeric() {
       str[i] === '_' ||
       str[i] === '+' ||
       str[i] === '=' ||
-      str[i] === '-' 
-    ) {
+      str[i] === '-' ||
+      str[i] === "." ||
+      str[i] === " "  
+      ) {
       str1 += 1;
     }
   } if (str1 < 1) {
@@ -184,18 +186,14 @@ function containsSpace(str) {
 }
 
 function countWords(str) {
-  // let count = 0;
-  // for (i = 0; i < str.length; i++){
-  //   if (str[i].split(" ") === " "){
-  //     count += 1;
-  //   }
-  //   if (count < 1){
-  //     return false;
-  //   } else {
-  //     return true
-  //   }
-  // } 
-}
+  let sum = 1;
+  for (i = 0; i < str.length; i++){
+    if (str[i] === " "){
+      sum += 1;
+    }    
+  }return sum;
+  }
+  
 
 function digits() {
 }

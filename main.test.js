@@ -42,7 +42,6 @@ describe('halfSquare', () => {
     expect(halfSquare(3.5)).toBe(6.125)
   })
 });
-
 describe('isLong', () => {
   it(`returns true if the given string is longer than 15 characters`, () => {
     expect(isLong('the quick brown fox')).toBe(true);
@@ -56,6 +55,7 @@ describe('isLong', () => {
     expect(isLong('the quick brown')).toBe(true);
   })
 });
+
 describe('exclaim', () => {
   it(`given a string without exclamation marks at the end, returns the string with one appended.`, () => {
     expect(exclaim('hello')).toBe('hello!')
