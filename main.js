@@ -22,18 +22,12 @@ function isLong(str) {
 }
 
 function exclaim(str) {
-  //   let count = 0;
-  //   if (str[str.length - 1] !== "!") {
-  //     return str + "!"
-  //   }  
-  //   if (str[str.length-1] === "!"){
-  //     return str;
-  //   } (str[str.length-1] === "!"){
-  // // if there are multiple "!", i want to capture the amount.
-  // while 
-  // // remove all ! and return +1.
-  // //indexOf
-  //     }
+  if (str.indexOf("!") === -1) {
+    return (str += "!");
+  }
+  if (str.indexOf("!") === str.length - 1) {
+    return str;
+  }
 }
 
 function containsDigit(str) {
@@ -102,7 +96,7 @@ function containsLowerCase(str) {
 }
 
 
-function containsUpperCase(str) { 
+function containsUpperCase(str) {
   let str1 = 0;
   for (i = 0; i < str.length; i++) {
     if (
@@ -161,8 +155,8 @@ function containsNonAlphanumeric(str) {
       str[i] === '=' ||
       str[i] === '-' ||
       str[i] === "." ||
-      str[i] === " "  
-      ) {
+      str[i] === " "
+    ) {
       str1 += 1;
     }
   } if (str1 < 1) {
@@ -174,11 +168,11 @@ function containsNonAlphanumeric(str) {
 
 function containsSpace(str) {
   let count = 0;
-  for (i = 0; i < str.length; i++){
-    if (str[i] === " "){
+  for (i = 0; i < str.length; i++) {
+    if (str[i] === " ") {
       count += 1;
     }
-  } if (count < 1){
+  } if (count < 1) {
     return false;
   } else {
     return true;
@@ -187,32 +181,61 @@ function containsSpace(str) {
 
 function countWords(str) {
   let sum = 1;
-  for (i = 0; i < str.length; i++){
-    if (str[i] === " "){
+  for (i = 0; i < str.length; i++) {
+    if (str[i] === " ") {
       sum += 1;
-    }    
-  }return sum;
-  }
-  
+    }
+  } return sum;
+}
 
-function digits() {
+
+function digits(arr) {
+  let arr1 = [];
+  if (arr < 0) {
+    arr *= -1;
+  }
+  str = arr.toString();
+  for (i = 0; i < str.length; i++) {
+    if (str[i] !== ".") {
+      arr1.push(str[i] * 1)
+    }
+  } return arr1;
 }
 
 function truncate(str) {
   let str1 = "";
-  if (str.length > 15) {
-    for (i = 0; i < 8; i++)
-      return str1 + "..."
-  }
-  else {
-    return str;
+  if (str.length >= 15) {
+    for (i = 0; i <= 7; i++) {
+      str1 += str[i];
+    }
+    str1 += "..."
+    return str1;
+  } else {
+    return str
   }
 }
 
-function isValidPassword() {
+function isValidPassword(str) {
+  if (
+    containsUpperCase(str) === true &&
+    containsLowerCase(str) === true &&
+    containsNonAlphanumeric(str) === true &&
+    containsDigit(str) === true &&
+    containsSpace(str) === false
+  ) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
-function onlyPunchy() {
+function onlyPunchy(arr) {
+  let str1 = [];
+  for (const value of arr) {
+    if (exclaim(value).length < 15) {
+      str1.push(exclaim(value));
+    }
+  } return str1
 }
 
 
