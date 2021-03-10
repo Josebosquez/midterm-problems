@@ -22,11 +22,22 @@ function isLong(str) {
 }
 
 function exclaim(str) {
-  if (str.indexOf("!") === -1) {
-    return (str += "!");
-  }
-  if (str.indexOf("!") === str.length - 1) {
+  let newStr = ""
+  if (str[str.length-1] === "!" && str[str.length-2] === "!"){
+    for (i = 0; i < str.length; i++){
+      if (str[i] !== "!"){
+        newStr += str[i];
+      } else {
+        newStr += str[i];
+        return newStr;
+      }
+    } 
+  } 
+  if (str[str.length-1] === "!"){
     return str;
+  }
+  if (str[str.length-1] !== "!"){
+    return str + "!"
   }
 }
 
